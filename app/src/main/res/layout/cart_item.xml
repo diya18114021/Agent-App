@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cart_item"
+    android:foreground="?selectableItemBackground"
+    app:cardForegroundColor="@color/cardview_shadow_end_color"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    android:layout_margin="10dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/cart_item_Image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="10dp"
+            android:background="@drawable/rectangle_5"
+            android:foreground="?selectableItemBackground"
+            android:src="@drawable/attach_money_24"
+            />
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/cart_item_Name"
+            android:text="Hand Sanitizer"
+            android:letterSpacing="0.05"
+            android:layout_toEndOf="@id/cart_item_Image"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="29px"
+            android:textColor="#333333"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_marginStart="12dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/cart_item_Info"
+            android:text="2 Certifications Available "
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#B3333333"
+            android:letterSpacing="0.03"
+            android:layout_toRightOf="@id/cart_item_Image"
+            android:layout_marginTop="30dp"
+            android:textSize="11sp"
+            />
+
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="34dp"
+            android:background="@drawable/button_border"
+            android:layout_toEndOf="@id/cart_item_Name"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:id = "@+id/addingcart2">
+
+            <TextView
+                android:id="@+id/cartitemCount"
+                android:textSize="12sp"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:gravity="center"
+                android:layout_centerInParent="true"/>
+            <ImageButton
+                android:id="@+id/increase_value_in_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/ic_add_circle"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:layout_toStartOf="@id/cartitemCount"
+                android:layout_centerVertical="true"/>
+            <ImageButton
+                android:id="@+id/decrease_value_in_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/ic_remove_circle"
+                android:layout_toEndOf="@id/cartitemCount"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:background="@drawable/onlyrightborder"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="10dp"
+            android:id="@+id/marketpricelayout"
+            android:layout_marginTop="2dp"
+            android:layout_below="@id/cart_item_Info"
+            android:layout_toEndOf="@id/cart_item_Image"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Market Price"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#4CAF50"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/rs1"
+                    android:textSize="11sp"
+                    android:text="\u20B9"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/Item_Market_Price_View"
+                    android:layout_toEndOf="@id/rs1"
+                    android:layout_marginStart="3dp"
+                    android:textSize="11sp"
+                    android:text="20"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:background="@drawable/onlyrightborder"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="10dp"
+            android:id="@+id/sellingpricelayout"
+            android:layout_marginTop="2dp"
+            android:layout_below="@id/cart_item_Info"
+            android:layout_toEndOf="@id/marketpricelayout"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selling Price"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#F44336"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/rs2"
+                    android:textSize="11sp"
+                    android:text="\u20B9"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_toEndOf="@id/rs2"
+                    android:layout_marginStart="3dp"
+                    android:text="30"
+                    android:id="@+id/Item_Selling_Price_View"
+                    android:textSize="11sp"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id ="@+id/profitlayout"
+            android:paddingEnd="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@id/cart_item_Info"
+            android:layout_toEndOf="@id/sellingpricelayout"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Profit"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/black"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/rs3"
+                    android:textSize="11sp"
+                    android:text="\u20B9"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="10"
+                    android:textSize="11sp"
+                    android:layout_toEndOf="@id/rs3"
+                    android:layout_marginStart="3dp"
+                    android:id="@+id/Item_Profit_View"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/Unit"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:layout_toEndOf="@id/Item_Profit_View" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/marketpricelayout"
+            android:layout_toEndOf="@id/cart_item_Image"
+            android:layout_marginStart="12sp">
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id ="@+id/tablerow1">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:text="Amount /piece"
+                    android:background="@drawable/cell_box"
+                    android:textSize="9sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="25dp"
+                    android:layout_width="80dp"
+                    android:text = "Quantity"
+                    android:background="@drawable/cell_box"
+                    android:textSize="9sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+
+                <TextView
+                    android:layout_height="25dp"
+                    android:layout_width="80dp"
+                    android:text = "Total"
+                    android:background="@drawable/cell_box"
+                    android:textSize="9sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id ="@+id/tablerow2">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/fillingTableMarketPrice"
+                    android:text="20 /piece"
+                    android:background="@drawable/cell_upper_border"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="25dp"
+                    android:layout_width="80dp"
+                    android:id="@+id/fillingTableItemQuantity1"
+                    android:text = "1000"
+                    android:background="@drawable/cell_upper_border"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+
+                <TextView
+                    android:layout_height="25dp"
+                    android:layout_width="80dp"
+                    android:id="@+id/fillingTotal1"
+                    android:text = "20000"
+                    android:background="@drawable/cell_upper_border"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id ="@+id/tablerow3">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/fillingTableCommission"
+                    android:text="10 /piece"
+                    android:background="@drawable/cell_lower_border"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="25dp"
+                    android:layout_width="80dp"
+                    android:id="@+id/fillingTableItemQuantity2"
+                    android:text = "1000"
+                    android:background="@drawable/cell_lower_border"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+
+                <TextView
+                    android:layout_height="25dp"
+                    android:layout_width="80dp"
+                    android:id="@+id/fillingTotal2"
+                    android:text = "10000"
+                    android:background="@drawable/cell_lower_border"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id ="@+id/tablerow4">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:text=""
+                    android:textSize="13sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="25dp"
+                    android:layout_width="80dp"
+                    android:text = "Total"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.05"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+
+                <TextView
+                    android:layout_height="25dp"
+                    android:layout_width="80dp"
+                    android:id="@+id/fillingOverallTotal"
+                    android:text = "10000"
+                    android:background="@drawable/cell_box"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/cart_item_Image"
+            android:text="Market Price"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginTop="21dp"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/cart_item_Image"
+            android:text="Commission"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginTop="47dp"
+            android:layout_marginStart="5dp"/>
+
+        <Button
+            android:id="@+id/deletebutton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/table"
+            android:backgroundTint="#B3ED1C24"
+            android:text="Delete"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:textAllCaps="false"
+            android:textSize="11sp"
+            app:cornerRadius="20dp" />
+
+        <Button
+            android:id="@+id/saveforlatterbutton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/table"
+            android:backgroundTint="#E0E0E0"
+            android:text="Save for later"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@id/deletebutton"
+            android:textAllCaps="false"
+            android:textSize="11sp"
+            app:cornerRadius="20dp" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

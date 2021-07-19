@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="80dp"
+    android:layout_height="34dp"
+    android:background="@drawable/button_border"
+    tools:context=".AddingCartValue">
+
+    <TextView
+        android:id="@+id/original_value"
+        android:textSize="12sp"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="1000"
+        android:gravity="center"
+        android:layout_centerInParent="true"/>
+    <ImageButton
+        android:id="@+id/increase_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src = "@drawable/ic_add_circle"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:layout_toStartOf="@id/original_value"
+        android:layout_centerVertical="true"/>
+    <ImageButton
+        android:id="@+id/decrease_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src = "@drawable/ic_remove_circle"
+        android:layout_toEndOf="@id/original_value"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:layout_centerVertical="true"
+        />
+
+
+
+</RelativeLayout>

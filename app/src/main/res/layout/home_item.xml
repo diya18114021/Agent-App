@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_card_view"
+    android:foreground="?selectableItemBackground"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    android:layout_margin="10dp"
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/Item_Image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="10dp"
+            android:background="@drawable/rectangle_5"
+            android:foreground="?selectableItemBackground"
+            android:src="@drawable/attach_money_24"
+            />
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Item_Name"
+            android:text="Hand Sanitizer"
+            android:letterSpacing="0.05"
+            android:layout_toEndOf="@id/Item_Image"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="29px"
+            android:textColor="#333333"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_marginStart="12dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Item_Info"
+            android:text="2 Certifications Available "
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#B3333333"
+            android:letterSpacing="0.03"
+            android:layout_toRightOf="@id/Item_Image"
+            android:layout_marginTop="30dp"
+            android:textSize="11sp"
+            />
+
+        <Button
+            android:id="@+id/add_to_cart_button"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/Item_Name"
+            app:cornerRadius="20dp"
+            android:backgroundTint="#1A989E"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:text="Add to Cart"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:background="@drawable/onlyrightborder"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="10dp"
+            android:id="@+id/marketpricelayout"
+            android:layout_marginTop="2dp"
+            android:layout_below="@id/Item_Info"
+            android:layout_toEndOf="@id/Item_Image"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Market Price"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#4CAF50"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/rs1"
+                    android:textSize="11sp"
+                    android:text="\u20B9"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/Item_Market_Price_View"
+                    android:layout_toEndOf="@id/rs1"
+                    android:layout_marginStart="3dp"
+                    android:textSize="11sp"
+                    android:text="20"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:background="@drawable/onlyrightborder"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="10dp"
+            android:id="@+id/sellingpricelayout"
+            android:layout_marginTop="2dp"
+            android:layout_below="@id/Item_Info"
+            android:layout_toEndOf="@id/marketpricelayout"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selling Price"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#F44336"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/rs2"
+                    android:textSize="11sp"
+                    android:text="\u20B9"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_toEndOf="@id/rs2"
+                    android:layout_marginStart="3dp"
+                    android:text="30"
+                    android:id="@+id/Item_Selling_Price_View"
+                    android:textSize="11sp"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@id/Item_Info"
+            android:layout_toEndOf="@id/sellingpricelayout"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Profit"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/black"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/rs3"
+                    android:textSize="11sp"
+                    android:text="\u20B9"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="10"
+                    android:textSize="11sp"
+                    android:layout_toEndOf="@id/rs3"
+                    android:layout_marginStart="3dp"
+                    android:id="@+id/Item_Profit_View"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/Unit"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:layout_toEndOf="@id/Item_Profit_View" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CartFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/customer_detail_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foreground="?selectableItemBackground"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cus_detail"
+                            android:text = "Customer Details"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/customer_name"
+                            android:layout_width="315dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:hint= "Name"
+                            app:boxCornerRadiusBottomEnd="20dp"
+                            app:boxCornerRadiusBottomStart="20dp"
+                            app:boxCornerRadiusTopEnd="20dp"
+                            app:boxCornerRadiusTopStart="20dp"
+                            app:boxStrokeColor="@color/cardview_shadow_start_color"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_below="@id/cus_detail">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="textPersonName"
+                                    android:textSize="12sp"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/customer_contact"
+                            android:layout_width="152dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:hint= "Contact Number"
+                            app:boxCornerRadiusBottomEnd="20dp"
+                            app:boxCornerRadiusBottomStart="20dp"
+                            app:boxCornerRadiusTopEnd="20dp"
+                            app:boxCornerRadiusTopStart="20dp"
+                            app:boxStrokeColor="@color/cardview_shadow_start_color"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_below="@id/customer_name">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="number"
+                                    android:textSize="12sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/customer_email"
+                            android:layout_width="152dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginEnd="10dp"
+                            android:hint= "Email ID"
+                            app:boxCornerRadiusBottomEnd="20dp"
+                            app:boxCornerRadiusBottomStart="20dp"
+                            app:boxCornerRadiusTopEnd="20dp"
+                            app:boxCornerRadiusTopStart="20dp"
+                            app:boxStrokeColor="@color/cardview_shadow_start_color"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_below="@id/customer_name"
+                            android:layout_toEndOf="@id/customer_contact">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="number"
+                                    android:textSize="12sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Button
+                            android:id ="@+id/place_order_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@id/customer_email"
+                            android:text="Place Order"
+                            android:textSize="10sp"
+                            android:textColor="@color/white"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:padding = "0dp"/>
+
+                        <TextView
+                            android:id="@+id/subtotal"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/customer_email"
+                            android:text="Subtotal"
+                            android:textSize="12sp"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="130dp"
+                            android:layout_marginBottom="10dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="(2 items)"
+                            android:id="@+id/total_items"
+                            android:layout_toEndOf="@id/subtotal"
+                            android:layout_marginStart="4dp"
+                            android:layout_below="@id/customer_email"
+                            android:textSize ="12sp"
+                            android:textColor="@color/black"
+                            android:layout_marginBottom="10dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/colon"
+                            android:layout_marginTop="10dp"
+                            android:text=" :"
+                            android:layout_below="@id/customer_email"
+                            android:layout_toEndOf="@id/total_items"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:layout_marginBottom="10dp"/>
+                        <TextView
+                            android:id="@+id/total_prize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1000"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@id/customer_email"
+                            android:layout_toEndOf="@id/colon"
+                            android:layout_marginStart="8dp"
+                            android:textSize="12sp"
+                            android:textColor="#B3ED1C24"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"/>
+                </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id = "@+id/cart_recycler_view"
+            android:padding = "4dp"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/cart_item"
+            android:layout_below="@id/customer_detail_box"/>
+
+</RelativeLayout>
+
