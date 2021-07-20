@@ -1,11 +1,14 @@
 package com.example.recycler_view_example
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
+import com.example.recycler_view_example.payment_gateway_helpers.CoreHelper
+import com.razorpay.PaymentResultListener
 
-class NavigationBar : AppCompatActivity() {
+class NavigationBar : AppCompatActivity(), PaymentResultListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navigation_bar)
@@ -48,5 +51,21 @@ class NavigationBar : AppCompatActivity() {
     private fun addFragment(fragment: Fragment){
         val fragmentTransition = supportFragmentManager.beginTransaction()
         fragmentTransition.add(R.id.fragmentContainer,fragment).addToBackStack(Fragment::class.java.simpleName).commit()
+    }
+
+    override fun onPaymentSuccess(p0: String?) {
+        CoreHelper.showAlertDialog(
+            this,
+            "Success",
+            "Payment successful.\n$p0",
+            { dialog: DialogInterface, _ -> dialog.dismiss() })
+    }
+
+    override fun onPaymentError(p0: Int, p1: String?) {
+        CoreHelper.showAlertDialog(
+            this,
+            "Failed",
+            "Payment failed.\n$p1",
+            { dialog, _: Int -> dialog.dismiss() })
     }
 }

@@ -1,21 +1,19 @@
 package com.example.recycler_view_example
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import android.widget.Toast
-import com.example.recycler_view_example.Common.Companion.cartRepository
-import com.google.gson.Gson
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import java.security.AccessController.getContext
-import android.widget.Toast.makeText as makeText1
+import org.greenrobot.eventbus.EventBus
 
 class HomeAdapter(internal var context: Context, private val exampleList: List<ExampleItem>) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>(){
 
@@ -65,6 +63,8 @@ class HomeAdapter(internal var context: Context, private val exampleList: List<E
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({
                         Toast.makeText(context, "Item Added to Cart", Toast.LENGTH_SHORT).show()
+                        // display total items in cart
+                        EventBus.getDefault().postSticky(CountCartEvent(true))
                     }, {
                         t: Throwable? -> Toast.makeText(context,"[INSERT CART]"+t!!.message,Toast.LENGTH_SHORT).show()
                     }))

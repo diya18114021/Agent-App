@@ -34,7 +34,7 @@ class CartAdapter(internal var context: Context, internal var cartList: List<Car
         holder.textView4.text = currentItem.sellingPrize.toString()
         holder.textView5.text = currentItem.profit.toString()
         holder.textView6.text = currentItem.marketPrize.toString() + " /piece"
-        holder.textView7.text = currentItem.profit.toString() + "/piece"
+        holder.textView7.text = currentItem.profit.toString() + " /piece"
         holder.textView8.text = "${currentItem.quantity}"
         holder.textView9.text = "${currentItem.quantity}"
         holder.textView10.text = "${currentItem.quantity * currentItem.marketPrize}"
