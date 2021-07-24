@@ -2,7 +2,7 @@ package com.example.recycler_view_example
 
 import com.google.gson.annotations.SerializedName
 
-data class ExampleItem(
+data class HomeItem(
   val id: Int,
   @SerializedName("imageUrl")
   val imageResource: String,
@@ -18,7 +18,7 @@ data class ExampleItem(
   val diff : String
   )
 
-data class ExampleItemWithCount(
-  val item : ExampleItem,
+data class HomeItemWithCount(
+  val item : HomeItem,
   var itemCount : Int
 )

@@ -4,7 +4,7 @@
     android:layout_width="80dp"
     android:layout_height="34dp"
     android:background="@drawable/button_border"
-    tools:context=".AddingCartValue">
+    >
 
     <TextView
         android:id="@+id/original_value"

@@ -53,15 +53,15 @@ class HomeFragment : Fragment() {
 
     private fun fetchProducts(){
         refreshLayout.isRefreshing = true
-        ExampleApi().getProducts().enqueue(object: Callback<List<ExampleItem>> {
-            override fun onFailure(call: Call<List<ExampleItem>>, t: Throwable) {
+        HomeApi().getProducts().enqueue(object: Callback<List<HomeItem>> {
+            override fun onFailure(call: Call<List<HomeItem>>, t: Throwable) {
                 refreshLayout.isRefreshing = false
                 Toast.makeText(activity, t.message, Toast.LENGTH_LONG).show()
             }
 
             override fun onResponse(
-                call: Call<List<ExampleItem>>,
-                response: Response<List<ExampleItem>>
+                call: Call<List<HomeItem>>,
+                response: Response<List<HomeItem>>
             ) {
                 refreshLayout.isRefreshing = false
                 val products = response.body()
@@ -72,7 +72,7 @@ class HomeFragment : Fragment() {
         })
     }
 
-    private fun showProducts(products: List<ExampleItem>){
+    private fun showProducts(products: List<HomeItem>){
         recycler_view.adapter = HomeAdapter(requireContext(),products)
         recycler_view.layoutManager = LinearLayoutManager(activity)
     }

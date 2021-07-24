@@ -15,7 +15,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import org.greenrobot.eventbus.EventBus
 
-class HomeAdapter(internal var context: Context, private val exampleList: List<ExampleItem>) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>(){
+class HomeAdapter(internal var context: Context, private val exampleList: List<HomeItem>) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>(){
 
     private var clickPosition = -1
 
